@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Nature/Strom02.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.7154
+height = 4.95454
+
+[node name="Strom02" type="StaticBody" groups=[
+"nature",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025108, 0.84461, 0.02298 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0628082, 1.53397, 0 )
+shape = SubResource( 1 )
+
+[node name="Mesh" type="MeshInstance" parent="."]
+transform = Transform( 2.31777, 0, 0, 0, 2.31777, 0, 0, 0, 2.31777, 0, -0.524347, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null

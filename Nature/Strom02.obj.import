@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Strom02.obj-73bebd4d64a970ba3022e1dd5c6f96f0.mesh"
+
+[deps]
+
+files=[ "res://.import/Strom02.obj-73bebd4d64a970ba3022e1dd5c6f96f0.mesh" ]
+
+source_file="res://Nature/Strom02.obj"
+dest_files=[ "res://.import/Strom02.obj-73bebd4d64a970ba3022e1dd5c6f96f0.mesh", "res://.import/Strom02.obj-73bebd4d64a970ba3022e1dd5c6f96f0.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

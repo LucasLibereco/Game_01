@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/trava.obj-25f7c99ab4580da195b05d88272e25c7.mesh"
+
+[deps]
+
+files=[ "res://.import/trava.obj-25f7c99ab4580da195b05d88272e25c7.mesh" ]
+
+source_file="res://trava.obj"
+dest_files=[ "res://.import/trava.obj-25f7c99ab4580da195b05d88272e25c7.mesh", "res://.import/trava.obj-25f7c99ab4580da195b05d88272e25c7.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

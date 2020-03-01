@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/sutr.obj-fd7e96c5522568823e124088c3d99e08.mesh"
+
+[deps]
+
+files=[ "res://.import/sutr.obj-fd7e96c5522568823e124088c3d99e08.mesh" ]
+
+source_file="res://sutr.obj"
+dest_files=[ "res://.import/sutr.obj-fd7e96c5522568823e124088c3d99e08.mesh", "res://.import/sutr.obj-fd7e96c5522568823e124088c3d99e08.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

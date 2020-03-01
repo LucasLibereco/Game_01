@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://untitled.obj" type="ArrayMesh" id=1]
+
+[node name="snehulak" type="Spatial"]
+transform = Transform( 1.21064, 0, 0, 0, 1.21064, 0, 0, 0, 1.21064, 0, -0.897464, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null

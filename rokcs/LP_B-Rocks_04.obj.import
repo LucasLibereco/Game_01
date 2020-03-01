@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/LP_B-Rocks_04.obj-a5692f11a585a4c0f82c85231902e5f5.mesh"
+
+[deps]
+
+files=[ "res://.import/LP_B-Rocks_04.obj-a5692f11a585a4c0f82c85231902e5f5.mesh" ]
+
+source_file="res://rokcs/LP_B-Rocks_04.obj"
+dest_files=[ "res://.import/LP_B-Rocks_04.obj-a5692f11a585a4c0f82c85231902e5f5.mesh", "res://.import/LP_B-Rocks_04.obj-a5692f11a585a4c0f82c85231902e5f5.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

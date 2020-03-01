@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Interface.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/BADABB.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://HUD/snowball.png" type="Texture" id=3]
+[ext_resource path="res://HUD/HUD_01.png" type="Texture" id=4]
+[ext_resource path="res://HUD/Life_icon_01.png" type="Texture" id=5]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+params_grow = true
+params_grow_amount = 0.394
+albedo_color = Color( 0.2, 0.0666667, 0.0666667, 1 )
+
+[sub_resource type="CanvasItemMaterial" id=2]
+next_pass = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+outline_size = 3
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+outline_size = 2
+font_data = ExtResource( 2 )
+
+[node name="Interface" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUD_life" type="TabContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0001
+margin_right = 8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Life_01" type="Sprite" parent="HUD_life"]
+position = Vector2( 169.056, -1.48828 )
+scale = Vector2( 0.11, 0.11 )
+texture = ExtResource( 5 )
+
+[node name="Life_02" type="Sprite" parent="HUD_life"]
+position = Vector2( 106.206, -1.44727 )
+scale = Vector2( 0.11, 0.11 )
+texture = ExtResource( 5 )
+
+[node name="Life_03" type="Sprite" parent="HUD_life"]
+position = Vector2( 42.2252, -0.67334 )
+scale = Vector2( 0.11, 0.11 )
+texture = ExtResource( 5 )
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = -36.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUD_01" type="Sprite" parent="TabContainer"]
+modulate = Color( 1, 1, 1, 0.643137 )
+position = Vector2( -80.7888, -23.8543 )
+scale = Vector2( 0.261112, 0.246215 )
+texture = ExtResource( 4 )
+
+[node name="snowball" type="Sprite" parent="TabContainer"]
+material = SubResource( 2 )
+position = Vector2( -46.3101, -24.9318 )
+scale = Vector2( 0.129891, 0.129891 )
+texture = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label_score" type="Label" parent="CanvasLayer"]
+margin_left = 24.4558
+margin_top = 12.3981
+margin_right = 128.456
+margin_bottom = 125.398
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.952941, 0.952941, 0.952941, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_ammo" type="Label" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -148.612
+margin_top = -90.3176
+margin_right = -89.6121
+margin_bottom = -26.3176
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
