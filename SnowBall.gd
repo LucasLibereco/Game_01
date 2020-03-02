@@ -2,6 +2,8 @@ extends RigidBody
 
 
 onready var objekt = preload("res://SnowExplode.tscn")  
+onready var throw_sound =  load("res://Sounds/Snow Ball Throw.wav")
+onready var hit_sound =  load("res://Sounds/Snow Ball Hit.wav")
 
 var velocity = Vector3(20,0,0)
 var move_to = Vector3(0,0,0)
@@ -10,6 +12,8 @@ var rotat = Vector3(0,0,0)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.apply_impulse(velocity,velocity)
+	$Sound.set_stream(throw_sound)
+	$Sound.play()
 
 
 	

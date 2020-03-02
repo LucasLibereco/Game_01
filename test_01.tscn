@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://test_01.gd" type="Script" id=1]
 [ext_resource path="res://Camera.gd" type="Script" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Textures/snowflakes-png-11570.png" type="Texture" id=4]
 [ext_resource path="res://Nature/Rock03.obj" type="ArrayMesh" id=5]
 [ext_resource path="res://Nature/Rock01.obj" type="ArrayMesh" id=6]
 [ext_resource path="res://Nature/Rock02.obj" type="ArrayMesh" id=7]
@@ -14,6 +15,8 @@
 [ext_resource path="res://ammo_snow.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Interface.tscn" type="PackedScene" id=14]
 [ext_resource path="res://SpawnPointEnemy.gd" type="Script" id=15]
+[ext_resource path="res://Sounds/Wind-Mark_DiAngelo.wav" type="AudioStream" id=16]
+[ext_resource path="res://Ambient sound .gd" type="Script" id=17]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -51,6 +54,25 @@ bounds = AABB( -37.624, -17.3115, -26.2437, 75.248, 34.623, 52.4874 )
 cell_space_transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 150.496, 69.2461, 104.975 )
 cell_subdiv = 10
 octree = PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255 )
+
+[sub_resource type="ParticlesMaterial" id=9]
+emission_shape = 2
+emission_box_extents = Vector3( 100, 1, 100 )
+
+[sub_resource type="SpatialMaterial" id=10]
+params_billboard_mode = 1
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.3
+albedo_texture = ExtResource( 4 )
+emission_enabled = true
+emission = Color( 1, 1, 1, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="QuadMesh" id=11]
+material = SubResource( 10 )
+size = Vector2( 0.3, 0.3 )
 
 [node name="Test_01" type="Spatial"]
 script = ExtResource( 1 )
@@ -351,3 +373,21 @@ transform = Transform( 0.509602, 0, -0.86041, 0, 1, 0, 0.86041, 0, 0.509602, -36
 
 [node name="snow_ammo" parent="." instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2368, -14.6411 )
+
+[node name="Ambient sound " type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -20.0
+script = ExtResource( 17 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3707, 16.4166, 0.391697 )
+cast_shadow = 0
+amount = 1000
+lifetime = 15.21
+randomness = 1.0
+visibility_aabb = AABB( -100, -20, -100, 200, 50, 200 )
+process_material = SubResource( 9 )
+draw_pass_1 = SubResource( 11 )

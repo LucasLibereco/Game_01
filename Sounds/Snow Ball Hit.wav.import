@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Snow Ball Hit.wav-f2da57dcec29ac0945c0010e515e690b.sample"
+
+[deps]
+
+source_file="res://Sounds/Snow Ball Hit.wav"
+dest_files=[ "res://.import/Snow Ball Hit.wav-f2da57dcec29ac0945c0010e515e690b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
