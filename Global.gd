@@ -30,6 +30,6 @@ func game_over():
 	body = 0
 	enemies = 0
 	player_lifes = 3
-	get_tree().change_scene("res://main_menu.tscn")
+	get_tree().change_scene("res://Game_Over.tscn")
 
 	

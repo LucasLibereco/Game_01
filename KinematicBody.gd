@@ -9,7 +9,7 @@ var pohyb = Vector3(0,0,0)
 var position3D
 var acceleration = 2
 var max_speed = 8
-
+var cam_pos = Vector3()
 
 func _physics_process(delta):
 	var position2D = get_viewport().get_mouse_position()
@@ -18,6 +18,8 @@ func _physics_process(delta):
 	var vyska = self.translation.y
 	position3D = Vector3(position3D.x,vyska,position3D.z)
 	#print(position3D)
+	cam_pos = position3D - self.translation
+	
 	if position3D:
 		self.look_at(position3D, Vector3(0,1,0))
 		
