@@ -2,6 +2,7 @@ extends KinematicBody
 
 onready var objekt = preload("res://SnowBall.tscn")
 onready var exploze = preload("res://SnowExplode.tscn")  
+onready var snow_pick = preload ("res://ammo_snow.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -76,15 +77,18 @@ func hit():
 		get_tree().get_current_scene().get_node("Interface").HUD_score(Global.body)
 		var ob = exploze.instance()
 		ob.translate(self.translation+Vector3(0,0,0))
-		get_tree().get_root().add_child(ob)
+		get_parent().add_child(ob)
 		Global.enemies = Global.enemies  - 1
+		var pick = snow_pick.instance()
+		pick.translate(self.translation+Vector3(0,-1,0))
+		get_parent().add_child(pick)
 		queue_free()
 
 func fire():
 	var ob = objekt.instance()		
 	ob.translate(transform.xform($RayCast.translation))
 	ob.smer(get_rotation_degrees())
-	get_tree().get_root().add_child(ob)
+	get_parent().add_child(ob)
 	fire = false
 	
 	

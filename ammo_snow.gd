@@ -14,6 +14,6 @@ func _ready():
 
 func _on_Area_body_entered(body):
 	if body.get_name()=="Player":
-		Global.munice = Global.munice + 10
+		Global.munice = Global.munice + 5
 		get_tree().get_current_scene().get_node("Interface").HUD_ammo(Global.munice)
-	
+		queue_free()

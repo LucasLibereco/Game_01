@@ -25,15 +25,15 @@ func HUD_score(score):
 func HUD_lifes(life):
 	if life == 1:
 		
-		$HUD_life/Life_01.set_texture(life_tex_01)
-		$HUD_life/Life_02.set_texture(life_tex_02)
-		$HUD_life/Life_03.set_texture(life_tex_02)
-	elif life == 2:
-		$HUD_life/Life_01.set_texture(life_tex_01)
-		$HUD_life/Life_02.set_texture(life_tex_01)
-		$HUD_life/Life_03.set_texture(life_tex_02)
-	elif life == 3:
-		$HUD_life/Life_01.set_texture(life_tex_01)
-		$HUD_life/Life_02.set_texture(life_tex_01)
 		$HUD_life/Life_03.set_texture(life_tex_01)
+		$HUD_life/Life_02.set_texture(life_tex_02)
+		$HUD_life/Life_01.set_texture(life_tex_02)
+	elif life == 2:
+		$HUD_life/Life_03.set_texture(life_tex_01)
+		$HUD_life/Life_02.set_texture(life_tex_01)
+		$HUD_life/Life_01.set_texture(life_tex_02)
+	elif life == 3:
+		$HUD_life/Life_03.set_texture(life_tex_01)
+		$HUD_life/Life_02.set_texture(life_tex_01)
+		$HUD_life/Life_01.set_texture(life_tex_01)
 	
