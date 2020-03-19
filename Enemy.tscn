@@ -4,7 +4,7 @@
 [ext_resource path="res://snehulak.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CylinderShape" id=1]
-radius = 15.3608
+radius = 13.5478
 
 [sub_resource type="CylinderShape" id=2]
 height = 3.5942
@@ -50,6 +50,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41596, -1.75192 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="screen_entered" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_exited"]

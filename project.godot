@@ -34,6 +34,11 @@ config/icon="res://icon.png"
 
 Global="*res://Global.gd"
 
+[display]
+
+mouse_cursor/custom_image="res://HUD/cursor.png"
+mouse_cursor/custom_image_hotspot=Vector2( 16, 16 )
+
 [editor_plugins]
 
 enabled=PoolStringArray( "zylann.hterrain", "zylann.scatter" )

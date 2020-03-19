@@ -34,7 +34,9 @@ emission_on_uv2 = false
 material = SubResource( 6 )
 size = Vector2( 0.5, 0.5 )
 
-[node name="RigidBody" type="RigidBody"]
+[node name="RigidBody" type="RigidBody" groups=[
+"bullet",
+]]
 physics_material_override = SubResource( 1 )
 script = ExtResource( 1 )
 

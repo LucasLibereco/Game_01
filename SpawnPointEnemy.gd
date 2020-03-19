@@ -13,17 +13,27 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Global.enemies < 3:
+	if Global.enemies < 4:
 		spawn_enemy()
 	
 func spawn_enemy():
 	var ob = enemy_obj.instance()
 	
-	ob.translate(self.translation+Vector3((rand_range(-2,2)*25),0,(rand_range(0,2)*25)))
+	ob.translate(self.translation+Vector3((rand_range(-100,100)),0,(rand_range(-100,100))))
 	
 	var player_trans = get_parent().get_node("Player").translation	
 	
-	if ob.translation - player_trans > Vector3(20,20,20):
 	
-	#get_parent().get_node("Enemies").add_child(ob)
+	if player_trans.z > ob.translation.z + 20:
 		get_parent().add_child(ob)
+	elif player_trans.z < ob.translation.z - 20:
+		get_parent().add_child(ob)
+	elif player_trans.y > ob.translation.y + 20:
+		get_parent().add_child(ob)
+	elif player_trans.y < ob.translation.y - 20:
+		get_parent().add_child(ob)
+	else:
+		pass
+		
+	#get_parent().get_node("Enemies").add_child(ob)
+			#get_parent().add_child(ob)

@@ -60,6 +60,13 @@ func _on_Area_body_entered(body):
 		#ob.translate(self.translation)
 		#add_child(ob)
 		queue_free()
-
+	if body.is_in_group("bullet"):
+		if body != self:
+			var ob = objekt.instance()
+			ob.translate(self.translation+Vector3(0,0,0))
+			get_parent().add_child(ob)
+			#ob.translate(self.translation)
+			#add_child(ob)
+			queue_free()
 
 

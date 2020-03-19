@@ -10,11 +10,13 @@ var pozice = Vector3(0,0,0)
 var lifes = 2
 var sledovat = false
 var fire = false
+var speed = 3
 onready var hrac = get_parent().get_node("/root/"+Global.level+"/Player")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.enemies = Global.enemies + 1
+	lifes = ((randi() % 3) + 1)
 	pass # Replace with function body.
 	move_to_player()
 	$Timer.start()
@@ -42,14 +44,14 @@ func _physics_process(delta):
 func follow():
 	var pozice = hrac.translation - self.translation
 	look_at(hrac.translation,Vector3(0,1,0))
-	if pozice.x>5:
-		pozice.x = 5
-	if pozice.z >5:
-		pozice.z = 5
-	if pozice.x<-5:
-		pozice.x = -5
-	if pozice.z <-5:
-		pozice.z = -5
+	if pozice.x>speed:
+		pozice.x = speed
+	if pozice.z >speed:
+		pozice.z = speed
+	if pozice.x<-speed:
+		pozice.x = -speed
+	if pozice.z <-speed:
+		pozice.z = -speed
 	#print (pozice)
 	pozice.y = -10
 	move_and_slide(pozice,Vector3(0,1,0))
@@ -93,17 +95,17 @@ func fire():
 	
 	
 	
-func _on_Area_body_entered(body):
-	if body.get_name() == "Player":
-		sledovat = true
+#func _on_Area_body_entered(body):
+#	if body.get_name() == "Player":
+#		sledovat = true
 		
 	# Replace with function body.
 
 
 
-func _on_Area_body_exited(body):
-	if body.get_name() == "Player":
-		sledovat = false
+#func _on_Area_body_exited(body):
+#	if body.get_name() == "Player":
+#		sledovat = false
 
 
 	
@@ -114,3 +116,11 @@ func _on_Timer_timeout():
 		fire()
 	$Timer.start()
 	
+
+
+func _on_VisibilityNotifier_screen_entered():
+	sledovat = true
+
+
+func _on_VisibilityNotifier_screen_exited():
+	sledovat = false

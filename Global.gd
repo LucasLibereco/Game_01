@@ -11,7 +11,7 @@ var enemies = 0
 var player_lifes = 3
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	 # Replace with function body.
 	aaa.HUD_ammo(munice)
 	aaa.HUD_score(body)
 	
